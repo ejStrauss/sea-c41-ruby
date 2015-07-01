@@ -1,0 +1,35 @@
+#exercise 1 - hrs in a year
+puts 24 * 365
+
+#exercise 2 - mins in decade
+puts 60 * 24 * 365 * 10
+
+#exercise 3 - seconds in age to years
+puts 1160000000 / (60 * 60 * 24 * 365)
+
+#exercise 4 - requesting name
+puts 'What is your name?'
+first = gets.chomp
+puts 'What\'s your middle name?'
+mid = gets.chomp
+puts 'What\'s your last name?'
+last = gets.chomp
+puts 'nice to meet you, ' + first + ' ' + mid + ' ' + last + '.'
+
+#exercise 5 - favorite number
+puts 'What\'s your most favorite number in the whole wild world?'
+num = gets.chomp.to_i + 1
+puts 'Really? But that number\'s so small.  Wouldn\'t you prefer a little larger one? Perhaps, ' + num.to_s + '?'
+
+#exercise 6 - angry boss
+puts 'Are you here with my Preparation H?'
+puts 'Why the hell are you here?!'
+answer = gets.chomp
+puts '\'' + answer + '\'? You make me sick. Get out of here.  You\'re fired!  What a nutcase...'
+
+#exercise  - table of contents
+line_width = 50
+puts('Table of Contents'.center(line_width))
+puts('Chapter 1:  Getting Started'.ljust(line_width/1) + ' page  1'.rjust(line_width/2))
+puts('Chapter 2:  Numbers'.ljust(line_width/1) + ' page  9'.rjust(line_width/2))
+puts('Chapter 3:  Letters'.ljust(line_width/1) + ' page 13'.rjust(line_width/2))

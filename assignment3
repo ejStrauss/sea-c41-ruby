@@ -1,0 +1,73 @@
+#1: Beer is on the wall.
+b = 3
+while b >= 0 do
+  b = b.to_s
+  puts b + ' bottles of beer on the wall, ' + b + ' bottles of beer!'
+  b = b.to_i - 1
+  b = b.to_s
+  puts 'Take one down, pass it around, ' + b + ' bottles of beer on the wall!'
+  b = b.to_i
+  if b == 0
+    puts 'No more bottles of beer on the wall, no more bottles of beer!'
+    puts 'Go to the store and buy some more, 3 bottles of beer on the wall!'
+    b = -1
+  end
+end
+
+#2: Grandmother.
+f = 5
+puts 'HI SWEETIE! GIVE NANA A KISS!'
+brat = gets.chomp
+while f != 0 do
+  if brat == 'BYE'
+    puts 'BYE SWEETIE'
+    f = 0
+  elsif
+    brat != brat.downcase!
+    puts 'HUH?! SPEAK UP, SWEETIE!'
+    brat = gets.chomp
+  else
+    n = (rand(1930..1950))
+    n = n.to_s
+    puts 'SINCE ' + n + '!'
+    brat = gets.chomp
+  end
+end
+
+#3: Needy Grandmother.
+f = 0
+puts 'HI SWEETIE! GIVE NANA A KISS!'
+while f < 4 do
+  brat = gets.chomp
+  if brat == 'BYE' && f != 2
+    puts 'I GOT A NEW CAT!'
+    f += 1
+  elsif f == 2
+    puts 'BYE SWEETIE!'
+    f = 100
+  elsif
+    brat != brat.downcase!
+    puts 'HUH?! SPEAK UP, SWEETIE!'
+    f = 0
+  else
+    n = (rand(1930..1950))
+    n = n.to_s
+    puts 'SINCE ' + n + '!'
+    f = 0
+  end
+end
+
+#4: Leap years.
+leap = 1900
+while leap < 2001 do
+  if leap%4 == 0 && leap%100 != 0
+    puts leap
+    leap += 1
+  elsif leap%100 == 0 && leap%400 == 0
+    puts leap
+    leap += 1
+  else
+    leap += 1
+  end
+end
+

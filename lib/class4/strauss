@@ -1,4 +1,4 @@
-#alphabetize some words
+#1 alphabetize some words
 collate = []
 puts 'Give me some words and I\'ll...there\'s a spider on my desk and I\'m slightly afraid.  Just give me some words, ok? One at a time.'
 w = gets.chomp
@@ -21,7 +21,7 @@ else
   puts collate.sort!
 end
 
-#90's table
+#2 90's table
 hits = [['Can I Kick It?', 'A Tribe Called Quest', '1991'],
 ['Rump Shaker', 'Wreckx-n-Effect', '1992'], ['Check Yo Self', 'Ice Cube', '1993'],
 ['Regulate', 'Warren G & Nate Dogg', '1994'], ['I Got 5 On It', 'Luniz', '1995'],
@@ -33,7 +33,7 @@ hits.each do |x|
   puts(x[0].ljust(line_width/3) + x[1].ljust(20) + x[2].rjust(line_width/3))
 end
 
-#tacos
+#3 tacos
 def ask(question)
   puts question # change me
   reply = gets.chomp.downcase
@@ -47,39 +47,38 @@ def ask(question)
 end
 puts ask('Do you like eating tacos? (y or n)')
 
-
-
+#4 romans
 def old_school_roman_numeral(num)
-  until num ==  0
-    if num / 1000 > 0
-      num -= 1000
+  x = num
+  new_num = []
+  loop do
+    if x == 1000
       new_num.push('M')
-    elsif num / 500 > 0
-      num -= 500
+      x = 0
+    elsif x >= 500
+      x -= 500
       new_num.push('D')
-    elsif num / 100 > 0
-      num -= 100
+    elsif x >= 100
+      x -= 100
       new_num.push('C')
-    elsif num > 50
-      num -= 50
+    elsif x >= 50
+      x -= 50
       new_num.push('L')
-    elsif num > 10
-      num -= 10
+    elsif x >= 10
+      x -= 10
       new_num.push('X')
-    elsif num > 5
-      num -= 5
+    elsif x >= 5
+      x -= 5
       new_num.push('V')
-    elsif num > 0 && num < 5
-      num -= 1
+    elsif x > 0 && x < 5
+      x -= 1
       new_num.push('I')
-    elsif num > 0
-      num -= 1
-    else
+    elsif x == 0
       puts 'Your number is ' + new_num.join + '!'
+      break
     end
   end
 end
-new_num = []
 puts 'Pick a number between 1 and 1000'
 input = gets.chomp
 puts 'You chose ' + input.to_s + '. Let me put that in a roman numeral for you.'

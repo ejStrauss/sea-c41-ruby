@@ -83,3 +83,55 @@ end
 puts 'Pick a number between 1 - 1000'
 input = gets.chomp.to_i
 puts old_school_roman_numeral(input)
+
+#5 modern romans
+
+def modern_roman_numeral(num)
+  new_num = []
+  loop do
+    if num == 1000
+      new_num.push('M')
+      num = 0
+    elsif num >= 900
+      new_num.push('CM')
+      num -= 900
+    elsif num >= 500
+      num -= 500
+      new_num.push('D')
+    elsif num >= 400
+      num -= 400
+      new_num.push('CD')
+    elsif num >= 100
+      num -= 100
+      new_num.push('C')
+    elsif num >= 50
+      num -= 50
+      new_num.push('L')
+    elsif num >= 40
+      num -= 40
+      new_num.push('XL')
+    elsif num >= 10
+      num -= 10
+      new_num.push('X')
+    elsif num == 9
+      num -= 9
+      new_num.push('IX')
+    elsif num >= 5
+      num -= 5
+      new_num.push('V')
+    elsif num == 4
+      num -= 4
+      new_num.push('IV')
+    elsif num > 0 && num < 4
+      num -= 1
+      new_num.push('I')
+    elsif num == 0
+      puts 'Your number is ' + new_num.join + '!'
+      break
+    end
+  end
+end
+
+puts 'Pick a number between 1 - 1000'
+input = gets.chomp.to_i
+puts modern_roman_numeral(input)

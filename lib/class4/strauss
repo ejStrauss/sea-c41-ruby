@@ -48,40 +48,38 @@ end
 puts ask('Do you like eating tacos? (y or n)')
 
 #4 romans
+
 def old_school_roman_numeral(num)
-  x = num
   new_num = []
   loop do
-    if x == 1000
+    if num == 1000
       new_num.push('M')
-      x = 0
-    elsif x >= 500
-      x -= 500
+      num = 0
+    elsif num >= 500
+      num -= 500
       new_num.push('D')
-    elsif x >= 100
-      x -= 100
+    elsif num >= 100
+      num -= 100
       new_num.push('C')
-    elsif x >= 50
-      x -= 50
+    elsif num >= 50
+      num -= 50
       new_num.push('L')
-    elsif x >= 10
-      x -= 10
+    elsif num >= 10
+      num -= 10
       new_num.push('X')
-    elsif x >= 5
-      x -= 5
+    elsif num >= 5
+      num -= 5
       new_num.push('V')
-    elsif x > 0 && x < 5
-      x -= 1
+    elsif num > 0 && num < 5
+      num -= 1
       new_num.push('I')
-    elsif x == 0
+    elsif num == 0
       puts 'Your number is ' + new_num.join + '!'
       break
     end
   end
 end
-puts 'Pick a number between 1 and 1000'
-input = gets.chomp
-puts 'You chose ' + input.to_s + '. Let me put that in a roman numeral for you.'
 
-puts old_school_roman_numeral(input.to_i)
-
+puts 'Pick a number between 1 - 1000'
+input = gets.chomp.to_i
+puts old_school_roman_numeral(input)

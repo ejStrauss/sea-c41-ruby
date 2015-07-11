@@ -22,10 +22,15 @@ else
 end
 
 #2 90's table
-hits = [['Can I Kick It?', 'A Tribe Called Quest', '1991'],
-['Rump Shaker', 'Wreckx-n-Effect', '1992'], ['Check Yo Self', 'Ice Cube', '1993'],
-['Regulate', 'Warren G & Nate Dogg', '1994'], ['I Got 5 On It', 'Luniz', '1995'],
-['Ready Or Not', 'The Fugees', '1996']]
+hits = [
+  ['Can I Kick It?', 'A Tribe Called Quest', '1991'],
+  ['Rump Shaker', 'Wreckx-n-Effect', '1992'], 
+  ['Check Yo Self', 'Ice Cube', '1993'],
+  ['Regulate', 'Warren G & Nate Dogg', '1994'], 
+  ['I Got 5 On It', 'Luniz', '1995'],
+  ['Ready Or Not', 'The Fugees', '1996']
+]
+
 line_width= 50
 puts('1990\'s Hip-Hop Hits:'.center(line_width))
 puts
@@ -45,10 +50,10 @@ def ask(question)
     ask('Let\'s try this again. Do you like eating tacos? (\'y\' or \'n\')')
   end
 end
+
 puts ask('Do you like eating tacos? (y or n)')
 
 #4 romans
-
 def old_school_roman_numeral(num)
   new_num = []
   loop do
@@ -85,7 +90,6 @@ input = gets.chomp.to_i
 puts old_school_roman_numeral(input)
 
 #5 modern romans
-
 def modern_roman_numeral(num)
   new_num = []
   loop do

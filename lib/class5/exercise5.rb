@@ -1,3 +1,34 @@
+#ANSWER:
+
+require 'yaml'
+
+def database
+  File.absolute_path('database.yml')
+end
+
+def load
+  location = database
+  read = File.read location
+  read_array = YAML::load read
+end
+
+def find(id)
+  load[id]
+end
+
+input = ARGV[0].to_i
+
+abort 'Usage: exercise5.rb POSITIVE_INTEGER' unless input > 0
+
+record = find(input)
+
+if record
+  puts "Found record ##{input} from #{database}"
+  puts record
+else
+  puts "Could't find record ##{input} from #{database}"
+end
+
 #!/usr/bin/env ruby
 #
 # 5 points

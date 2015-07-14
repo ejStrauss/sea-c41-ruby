@@ -1,4 +1,20 @@
-#!/usr/bin/env ruby
+#ANSWER:
+
+require 'yaml'
+
+def records
+  ['Re-engineering the office of now',
+  'Dynamic new paradigm',
+  'Global interconnectedness',
+  'Envisioning the growth movement',
+  'Spearheading scientific technologies']
+end
+
+puts records.to_yaml
+
+
+
+!/usr/bin/env ruby
 #
 # 5 points
 #
@@ -36,3 +52,5 @@ def records
 end
 
 puts records.to_yaml
+
+

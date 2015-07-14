@@ -1,6 +1,36 @@
+#ANSWER
+require 'yaml'
+
+def records
+  ['Re-engineering the office of now',
+  'Dynamic new paradigm',
+  'Global interconnectedness',
+  'Envisioning the growth movement',
+  'Spearheading scientific technologies']
+end
+
+def database
+  File.absolute_path('database.yml')
+end
+
+def save
+  input = records.to_yaml
+  location = database
+  File.open location, 'w' do |x|
+    x.write input
+  end
+  puts(read == input)
+  puts(read_array == records)
+end
+
+save
+
+puts "Saved #{records.size} records to #{database}"
+
 #!/usr/bin/env ruby
 #
-# 5 points
+#
+5 points
 #
 # Replace the `records` and `database` methods with your solutions from
 # exercises 1 and 2.

@@ -1,3 +1,11 @@
+#ANSWER
+
+def database
+  File.absolute_path('lib/class5/database.yml')
+end
+
+puts database
+
 #!/usr/bin/env ruby
 #
 # 5 points

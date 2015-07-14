@@ -1,3 +1,21 @@
+#ANSWER
+require 'yaml'
+
+def database
+  File.absolute_path('database.yml')
+end
+
+def load
+  location = database
+  read = File.read location
+  read_array = YAML::load read
+end
+
+records = load
+
+puts "Loaded #{records.size} records from #{database}"
+puts records
+
 #!/usr/bin/env ruby
 #
 # 5 points

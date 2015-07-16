@@ -16,9 +16,8 @@
 #   /Users/eva/Projects/sea-c21-ruby/lib/class6/database.yml
 #
 # TIP: See your solution for Class 5 Exercise 2.
-
 def database
-  '/change/me'
+  location = File.absolute_path('lib/class6/database.yml')
 end
 
 puts database

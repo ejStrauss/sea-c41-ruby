@@ -21,22 +21,31 @@
 
 require 'yaml'
 
-def person
-  { 'name' => 'Barry White',
-    'food' => 'Anything related to stew',
-    'secret crush' => 'Sarah Palin',
-    'location when Kennedy was shot' => 'eating a popsicle' }
+def database
+  File.absolute_path('database.yml')
 end
 
-puts person.to_yaml
-
 def load
-  { replace: 'me' }
+  location = database
+  File.open location
+  inputOne = File.read location
+  inputTwo = YAML::load inputOne
 end
 
 def update(key, value)
-  key + value # fix me
+  new_guy = load
+  load[key] = value
 end
+
+input1 = 'candle'
+input2 = 'scabs'
+
+#abort 'Usage: exercise5.rb KEY VALUE' unless input1 && input2
+
+update(input1, input2)
+
+puts "Updated 1 key-value pair in #{database}"
+puts ":#{input1} => #{input2.inspect}"
 
 input1, input2 = ARGV
 

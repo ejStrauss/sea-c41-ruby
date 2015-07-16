@@ -18,7 +18,10 @@
 require 'yaml'
 
 def person
-  { change: 'me' }
+  { 'name' => 'Barry White',
+    'food' => 'Anything related to stew',
+    'secret crush' => 'Sarah Palin',
+    'location when Kennedy was shot' => 'eating a popsicle' }
 end
 
 puts person.to_yaml

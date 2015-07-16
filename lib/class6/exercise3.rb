@@ -27,15 +27,22 @@
 require 'yaml'
 
 def person
-  { replace: 'me' }
+  { 'name' => 'Barry White',
+    'food' => 'Anything related to stew',
+    'secret crush' => 'Sarah Palin',
+    'location when Kennedy was shot' => 'eating a popsicle' }
 end
 
 def database
-  '/replace/me'
+  File.absolute_path('database.yml')
 end
 
 def save
-  false # fix me
+  info = person.to_yaml
+  location = database
+  File.open location, 'w' do |x|
+    x.write info
+  end
 end
 
 save

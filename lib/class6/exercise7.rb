@@ -23,18 +23,22 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  File.absolute_path('database.yml')
 end
 
 def load
-  { replace: 'me' }
+  location = database
+  File.open location
+  inputOne = File.read location
+  inputTwo = YAML::load inputOne
 end
 
 def remove(key)
-  key # fix me
+  list = load
+  list.delete(key)
 end
 
-input = ARGV[0]
+input = 'name'
 
 abort 'Usage: exercise7.rb KEY' unless input
 
@@ -46,3 +50,4 @@ if result
 else
   puts "Could't find key :#{input} from #{database}"
 end
+

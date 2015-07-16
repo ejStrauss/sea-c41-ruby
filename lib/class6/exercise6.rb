@@ -21,9 +21,14 @@
 
 require 'yaml'
 
-def database
-  '/replace/me'
+def person
+  { 'name' => 'Barry White',
+    'food' => 'Anything related to stew',
+    'secret crush' => 'Sarah Palin',
+    'location when Kennedy was shot' => 'eating a popsicle' }
 end
+
+puts person.to_yaml
 
 def load
   { replace: 'me' }

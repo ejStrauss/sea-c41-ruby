@@ -29,18 +29,25 @@
 #     9000.inspect  #=> '9000'
 #     'hi'.inspect  #=> '"hi"'
 
+
 require 'yaml'
 
 def database
-  '/replace/me'
+  File.absolute_path('database.yml')
 end
 
 def load
-  { fix: 'me' }
+  location = database
+  File.open location
+  input1 = File.read location
+  input2 = YAML::load input1
 end
 
+
 def display(pairs)
-  pairs # fix me
+  pairs.each do |x, y|
+    puts x + ': ' + y
+  end
 end
 
 person = load

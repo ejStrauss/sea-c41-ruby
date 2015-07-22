@@ -47,29 +47,89 @@
 
 class Integer
   def hours_in_seconds
-    # replace me
+    self * 60
   end
 end
 
 class String
   def indent(amount = 2)
-    amount # replace me
+    indented = (" " * amount) + self
   end
 end
 
 class Integer
-  # rubocop:disable MethodLength
   def to_roman
-    # replace me
+    num = self
+    roman_array = Array.new
+    if num >= 1000
+      roman_array.push "M" * (num / 1000)
+      num = num % 1000
+    end
+    if num >= 900
+      roman_array.push "CM"
+      num -= 900
+    end
+    if num >= 500
+      roman_array.push "D" * (num / 500)
+      num = num % 500
+    end
+    if num >= 400
+      roman_array.push "CD"
+      num -= 400
+    end
+    if num >= 100
+      roman_array.push "C" * (num / 100)
+      num = num % 100
+    end
+    if num >= 90
+      roman_array.push "LC"
+      num -= 90
+    end
+    if num >= 50
+      roman_array.push "L" * (num / 50)
+      num = num % 50
+    end
+    if num >= 40
+      roman_array.push "XL"
+      num -= 40
+    end
+    if num >= 10
+      roman_array.push "X" * (num / 10)
+      num = num % 10
+    end
+    if num >= 9
+      roman_array.push "IX"
+      num -= 9
+    end
+    if num >= 5
+      roman_array.push "V"
+      num -= 5
+    end
+    if num >= 4
+      roman_array.push "IV"
+      num -= 4
+    end
+    until num == 0
+      roman_array.push "I"
+      num -= 1
+    end
+    roman_array.join
   end
 end
 
 class Array
   def second
-    # replace me
+    self[1]
   end
 
   def third
-    # replace me
+    self[2]
   end
 end
+
+puts 10.hours_in_seconds
+puts 'string'.indent
+puts 1999.to_roman
+puts [10, 20, 30].second
+puts [10, 20, 30].third
+

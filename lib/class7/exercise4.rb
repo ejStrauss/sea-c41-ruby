@@ -38,8 +38,13 @@ class OrangeTree
   end
 
   def pick!(amount = 1)
+<<<<<<< HEAD
     return nil if @fruit < amount
     @fruit -= amount
+=======
+    return nil if fruit < amount
+    fruit -= amount
+>>>>>>> a2c4d841c08105e78bebe7356c5c7107b04743ca
   end
 end
 
@@ -48,4 +53,7 @@ puts orange_tree.fruit
 orange_tree = OrangeTree.new(20)
 puts orange_tree.fruit
 OrangeTree.new.==(orange_tree)
+<<<<<<< HEAD
 
+=======
+>>>>>>> a2c4d841c08105e78bebe7356c5c7107b04743ca

@@ -44,6 +44,7 @@
 #     end
 #
 #     1.plus_forty_two  #=> 43
+<<<<<<< HEAD
 
 class Integer
   def hours_in_seconds
@@ -51,6 +52,8 @@ class Integer
   end
 end
 
+=======
+>>>>>>> a2c4d841c08105e78bebe7356c5c7107b04743ca
 class String
   def indent(amount = 2)
     indented = (" " * amount) + self
@@ -132,4 +135,7 @@ puts 'string'.indent
 puts 1999.to_roman
 puts [10, 20, 30].second
 puts [10, 20, 30].third
+<<<<<<< HEAD
 
+=======
+>>>>>>> a2c4d841c08105e78bebe7356c5c7107b04743ca
